@@ -10,6 +10,7 @@ git clone https://github.com/Web3bidgeAsoOke/frontend.git
 ```
 
 To install the necessary dependencies:
+
 ```bash
 npm install
 ```
@@ -20,7 +21,7 @@ First, run the development server:
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:5173/](http://localhost:5173/) with your browser to see the result.
 
 ## Folder Structure
 A breakdown of the project file structure:
