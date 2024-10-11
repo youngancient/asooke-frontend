@@ -6,7 +6,7 @@ This is a react app built with react x typescript (vite).
 
 To clone:
 ```bash
-git clone xxx
+git clone https://github.com/Web3bidgeAsoOke/frontend.git
 ```
 
 To install the necessary dependencies:
