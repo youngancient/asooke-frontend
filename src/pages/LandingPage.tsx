@@ -1,7 +1,17 @@
+import Header from "../components/Header";
+import { AfterHero } from "../components/sections/AfterHero";
+import { BeforeFooter } from "../components/sections/BeforeFooter";
+import { Hero } from "../components/sections/Hero";
+import { TopSellers } from "../components/sections/TopSellers";
 const LandingPage = () => {
   return (
-    <div className="w-full p-5">
-      <h2 className="text-5xl font-bold">Landing Page</h2>
+    <div className="bg-[#111015]">
+      <Header />
+      <Hero />
+      <AfterHero />
+      <TopSellers />
+      <BeforeFooter />
+      <Header />
     </div>
   );
 };
