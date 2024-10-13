@@ -7,8 +7,8 @@ const AppRoutes = () => {
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="*" element={"Not Found"} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="*" element={"Not Found"} />
       </Routes>
     </Router>
   );
