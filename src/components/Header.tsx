@@ -1,6 +1,15 @@
+import { useAppKit, useAppKitAccount } from "@reown/appkit/react";
 import { Button } from "./ui/Button";
+import { formatAddress } from "../utils/helper";
 
 const Header = () => {
+  const { open } = useAppKit();
+  const { address, isConnected } = useAppKitAccount();
+
+  const handleButtonClick = () => {
+    open();
+  };
+
   return (
     <header className="w-full p-4 bg-[#1B201C] flex items-center justify-between py-">
       <div>
@@ -8,7 +17,7 @@ const Header = () => {
       </div>
 
       <div>
-        <Button text="Connect Wallet" onClick={() => {}} />
+        <Button text={isConnected ? formatAddress(address ?? "") : "Connect Wallet"} onClick={handleButtonClick} />
       </div>
     </header>
   );
