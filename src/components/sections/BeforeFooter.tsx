@@ -9,7 +9,7 @@ export const BeforeFooter = () => {
           Buy & Sell Aso-ebi
         </h3>
         <p className="my-3 text-[#A1A2AF] text-xl">
-          Decentralized fashion marketplace for all local fabric sellers, global
+          Decentralized fashion marketplace made for all local fabric sellers, global
           cloth merchants, fashion designers, and fashion enthusiasts.{" "}
         </p>
 
