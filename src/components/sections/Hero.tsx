@@ -3,32 +3,31 @@ import anakaraImage from "/assets/fabric1.png";
 
 export const Hero = () => {
   return (
-    <div className="bg-[url('/assets/background.png')] bg-cover bg-center  py-20 md:px-20 px-5 md:mt-20">
+    <div className="bg-[url('/assets/background.png')] bg-cover bg-center py-20 md:px-20 px-5 md:mt-20">
       <div className="w-full flex justify-between md:flex-row flex-col">
         <div className="md:w-[50%] w-full">
-          <h3 className="text-7xl text-white font-bold">Buy & Sell Aso-ebi</h3>
+          <h3 className="text-7xl text-white font-bold">Elevate Your Style with Aso Ebi</h3>
           <p className="my-5 text-[#A1A2AF] text-2xl">
-            Decentralized fashion marketplace for all local fabric sellers,
-            global cloth merchants, fashion designers, and fashion enthusiasts.{" "}
+            Join a vibrant community of local fabric sellers, global cloth merchants, and talented designers in a decentralized marketplace where fashion meets tradition.
           </p>
 
           <div className="my-10 font-bold text-xl">
-            <Button text="Start Buying" onClick={() => {}} />
+            <Button text="Explore Fabrics" onClick={() => {}} />
           </div>
 
           <div className="w-full flex">
             <div>
               <img className="w-[80px]" src="/assets/Icon.png" alt="" />
 
-              <h3 className="text-[#38C947] font-bold my-3 text-xl">+500</h3>
-              <p className="text-xl text-white">items deployed</p>
+              <h3 className="text-[#38C947] font-bold my-3 text-xl">500+ Designers and Merchants</h3>
+              <p className="text-xl text-white"></p>
             </div>
 
             <div className="ml-10">
               <img className="w-[80px]" src="/assets/Icon.png" alt="" />
 
-              <h3 className="text-[#38C947] font-bold my-3 text-xl">+500</h3>
-              <p className="text-xl text-white">items deployed</p>
+              <h3 className="text-[#38C947] font-bold my-3 text-xl">Global Reach</h3>
+              <p className="text-xl text-white"></p>
             </div>
           </div>
         </div>
@@ -37,8 +36,8 @@ export const Hero = () => {
           <div className="md:w-[465px] h-[540px] rounded-lg">
             <img
               src={anakaraImage}
-              className="h-full w-full rounded-xl "
-              alt="Ankara"
+              className="h-full w-full rounded-xl"
+              alt="Ankara Fabric"
             />
           </div>
 
@@ -50,7 +49,7 @@ export const Hero = () => {
                 </div>
 
                 <div className="ml-5">
-                  <h3 className="text-2xl text-white font-bold ">
+                  <h3 className="text-2xl text-white font-bold">
                     Weary Artwork
                   </h3>
                   <p className="text-[#A1A2AF]">Darwin Shaffer</p>
@@ -65,7 +64,7 @@ export const Hero = () => {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g clip-path="url(#clip0_108_2218)">
+                  <g clipPath="url(#clip0_108_2218)">
                     <path
                       opacity="0.4"
                       d="M5.38441 6.31148L8.52827 4.98632C8.66668 4.93006 8.82486 4.93006 8.95668 4.98632L12.1071 6.31148C12.384 6.43024 12.641 6.11145 12.4499 5.88643L9.15441 2.06723C8.93032 1.8047 8.56123 1.8047 8.33714 2.06723L5.04168 5.88643C4.85055 6.11145 5.10759 6.43024 5.38441 6.31148Z"
@@ -95,15 +94,12 @@ export const Hero = () => {
 
                 <p>4.5 ETH</p>
               </div>
-              {/* <p className="text-white">
-              This is an example of a glassmorphism effect using Tailwind CSS.
-            </p> */}
             </div>
           </div>
         </div>
       </div>
 
-      <div className="  w-full items-center justify-center mt-20">
+      <div className="w-full items-center justify-center mt-20">
         <div className="w-[95%] relative bg-[#1B201C] h-[230px] rounded-2xl">
           <div className="absolute top-[-60px] right-[-40px]">
             <img className="w-[150px]" src="/assets/star.png" alt="Star" />
