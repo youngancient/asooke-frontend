@@ -1,14 +1,26 @@
 import { useAppKit, useAppKitAccount } from "@reown/appkit/react";
 import { Button } from "./ui/Button";
 import { formatAddress } from "../utils/helper";
+import { useEffect } from "react";
+type ModalProps = {
+  setOpenModal: () => void;
+  openModal?: Boolean;
+};
 
-const Header = () => {
+const Header = ({ setOpenModal }: ModalProps) => {
   const { open } = useAppKit();
   const { address, isConnected } = useAppKitAccount();
 
   const handleButtonClick = () => {
     open();
+    // setOpenModal();
   };
+
+  useEffect(() => {
+    if (isConnected) {
+      setOpenModal();
+    }
+  }, [isConnected]);
 
   return (
     <header className="w-full p-4 bg-[#1B201C] flex items-center justify-between py-">
@@ -18,7 +30,10 @@ const Header = () => {
       </div>
 
       <div>
-        <Button text={isConnected ? formatAddress(address ?? "") : "Connect Wallet"} onClick={handleButtonClick} />
+        <Button
+          text={isConnected ? formatAddress(address ?? "") : "Connect Wallet"}
+          onClick={handleButtonClick}
+        />
       </div>
     </header>
   );
