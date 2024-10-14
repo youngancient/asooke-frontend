@@ -6,37 +6,30 @@ export const TopSellers = () => {
       <div className="w-[95%]">
         <div className="pb-20 px-10">
           <h3 className="text-[#FFFFFF] text-5xl font-bold mb-4">
-            Top Fabric Seller{" "}
+            Top Fabric Sellers{" "}
           </h3>
           <p className="text-2xl text-[#A1A2AF]">
-            Decentralized fashion marketplace for all local fabric sellers,
-            global <br />
-            cloth merchants, fashion designers, and fashion enthusiasts.{" "}
+            Discover the finest fabric sellers in the Aso Ebi marketplace, <br />
+            featuring a diverse array of local artisans, global cloth merchants, and innovative fashion designers. Whether you're seeking traditional textiles or contemporary designs, you're sure to find exceptional quality and creativity here.
           </p>
         </div>
 
         <div className="w-full flex items-center justify-center flex-col">
-          <div className="mt-20 w-full lg:w-[95%] flex items-center  md:flex-row flex-col">
+          <div className="mt-20 w-full lg:w-[95%] flex items-center md:flex-row flex-col">
             <NFTCard image="/assets/image 4.png" />
-
             <NFTCard image="/assets/image 5.png" />
-
             <NFTCard image="/assets/fabric1.png" />
           </div>
 
-          <div className="mt-20 w-full lg:w-[95%]  flex items-center  md:flex-row flex-col">
+          <div className="mt-20 w-full lg:w-[95%] flex items-center md:flex-row flex-col">
             <NFTCard image="/assets/image 7.png" />
-
             <NFTCard image="/assets/image 8.png" />
-
             <NFTCard image="/assets/image 9.png" />
           </div>
 
-          <div className="mt-20 w-full lg:w-[95%]  flex items-center md:flex-row flex-col">
+          <div className="mt-20 w-full lg:w-[95%] flex items-center md:flex-row flex-col">
             <NFTCard image="/assets/image 10.png" />
-
             <NFTCard image="/assets/image 11.png" />
-
             <NFTCard image="/assets/image 12.png" />
           </div>
         </div>
