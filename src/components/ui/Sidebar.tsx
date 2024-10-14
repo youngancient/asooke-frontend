@@ -25,11 +25,6 @@ const Sidebar = () => {
           </Link>
         </li>
       </ul>
-      <div className="mt-auto flex justify-center mx-2">
-        <button className="bg-red-600 text-white py-2 rounded-md w-full hover:bg-red-700 transition">
-          <div className="flex items-center justify-center">Logout</div>
-        </button>
-      </div>
     </div>
   );
 };
