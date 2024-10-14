@@ -17,7 +17,10 @@ const Header = () => {
       </div>
 
       <div>
-        <Button text={isConnected ? formatAddress(address ?? "") : "Connect Wallet"} onClick={handleButtonClick} />
+        <Button
+          text={isConnected ? formatAddress(address ?? "") : "Connect Wallet"}
+          onClick={handleButtonClick}
+        />
       </div>
     </header>
   );
