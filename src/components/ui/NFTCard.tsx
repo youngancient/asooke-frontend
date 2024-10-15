@@ -1,7 +1,7 @@
 // import anakaraImage from "/assets/fabric1.png";
 export const NFTCard = ({ image }: { image: string }) => {
   return (
-    <div className="md:w-[30%] mt-10 md:mt-0 flex justify-end relative">
+    <div className="md:w-[500px] max-w-full mt-10 md:mt-0 ml-4 flex justify-end relative">
       <div className="md:w-[465px] h-[540px] rounded-lg">
         <img
           src={image}
@@ -31,7 +31,7 @@ export const NFTCard = ({ image }: { image: string }) => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g clip-path="url(#clip0_108_2218)">
+              <g clipPath="url(#clip0_108_2218)">
                 <path
                   opacity="0.4"
                   d="M5.38441 6.31148L8.52827 4.98632C8.66668 4.93006 8.82486 4.93006 8.95668 4.98632L12.1071 6.31148C12.384 6.43024 12.641 6.11145 12.4499 5.88643L9.15441 2.06723C8.93032 1.8047 8.56123 1.8047 8.33714 2.06723L5.04168 5.88643C4.85055 6.11145 5.10759 6.43024 5.38441 6.31148Z"
