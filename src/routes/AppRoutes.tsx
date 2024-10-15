@@ -4,12 +4,17 @@ import Dashboard from "../pages/dashboard/Dashboard";
 import Sellers from "../pages/dashboard/sellers/Sellers";
 import Designers from "../pages/dashboard/designers/Designers";
 
+
 const AppRoutes = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/content" element={<Content />} />
+        <Route path="/blogs" element={<Blog />} />
+        <Route path="/videos" element={<Video />} />
+        <Route path="/articles" element={<Article />} />
         <Route path="*" element={"Not Found"} />
         <Route path="/sellers" element={<Sellers />} />
         <Route path="/designers" element={<Designers />} />
