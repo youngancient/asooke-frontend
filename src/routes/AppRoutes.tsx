@@ -3,6 +3,10 @@ import LandingPage from "../pages/LandingPage";
 import Dashboard from "../pages/dashboard/Dashboard";
 import Sellers from "../pages/dashboard/sellers/Sellers";
 import Designers from "../pages/dashboard/designers/Designers";
+import ContentsPage from "../pages/Content";
+import Blog from "../pages/blogs";
+import Video from "../pages/videos";
+import Article from "../pages/articles";
 
 
 const AppRoutes = () => {
@@ -11,13 +15,13 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/content" element={<Content />} />
+        <Route path="/content" element={<ContentsPage />} />
         <Route path="/blogs" element={<Blog />} />
         <Route path="/videos" element={<Video />} />
         <Route path="/articles" element={<Article />} />
-        <Route path="*" element={"Not Found"} />
         <Route path="/sellers" element={<Sellers />} />
         <Route path="/designers" element={<Designers />} />
+        <Route path="*" element={"Not Found"} />
       </Routes>
     </Router>
   );

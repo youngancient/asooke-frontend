@@ -88,7 +88,13 @@ export const useRegister = () => {
         if (reciept.status === 1) {
           toast.success("User Registration successful");
           // navigate to dashboard based on roleType
-          navigate("/dashboard");
+          if(roleType == 3){ // buyer
+            navigate("/dashboard");
+          } else if(roleType == 2){ //designer
+            navigate("/designers");
+          }else if(roleType == 1){  //seller
+            navigate("/sellers");
+          }
           return;
         }
       } catch (error) {
