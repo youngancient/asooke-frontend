@@ -15,12 +15,12 @@ const LandingPage = () => {
   return (
     <div className="bg-[#111015]">
       {openModal && <Modal onClose={onClose} />}
-      <Header setOpenModal={() => setOpenModal(true)} openModal={openModal} />
-      <Hero />
+      <Header />
+      <Hero setOpenModal={() => setOpenModal(true)} />
       <AfterHero />
       <TopSellers />
       <BeforeFooter />
-      <Header setOpenModal={() => setOpenModal(true)} openModal={openModal} />
+      {/* <Header setOpenModal={() => setOpenModal(true)} openModal={openModal} /> */}
     </div>
   );
 };

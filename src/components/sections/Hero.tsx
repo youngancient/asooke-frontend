@@ -1,21 +1,57 @@
+import { toast } from "react-toastify";
+import { useUser } from "../../hooks/specific/useUser";
 import { Button } from "../ui/Button";
 import anakaraImage from "/assets/fabric1.png";
+import { ModalProps } from "../Header";
 
-export const Hero = () => {
+export const Hero = ({ setOpenModal }: ModalProps) => {
+  const { user } = useUser();
+  console.log("user name: ", user?.displayName);
+  console.log("is registered: ", user?.isRegistered);
+  console.log("user role: ", user?.roleType);
+
+  const handleNavigateUser = () => {
+    if (user) {
+      if (user.isRegistered) {
+        toast.success("Yaay, Let's Go to Dashboard");
+      } else {
+        registerUser();
+      }
+    } else {
+      toast.error("Connect Wallet");
+    }
+  };
+
+  const registerUser =()=>{
+    setOpenModal();
+  }
   return (
     <div className="bg-[url('/assets/background.png')] bg-cover bg-center py-20 md:px-20 px-5 md:mt-20">
       <div className="w-full flex justify-between md:flex-row flex-col">
         <div className="md:w-[50%] w-full">
-          <h3 className="text-7xl text-white font-bold">Elevate Your Style with Aso Ebi</h3>
+          <h3 className="text-7xl text-white font-bold">
+            Elevate Your Style with Aso Ebi
+          </h3>
           <p className="my-5 text-[#A1A2AF] text-2xl">
-            Join a vibrant community of local fabric sellers, global cloth merchants, and talented designers in a decentralized marketplace where fashion meets tradition.
+            Join a vibrant community of local fabric sellers, global cloth
+            merchants, and talented designers in a decentralized marketplace
+            where fashion meets tradition.
           </p>
 
           <div className="my-10 font-bold text-xl">
-            <Button text="Explore Fabrics" onClick={() => {}} />
+            <Button
+              text={
+                user
+                  ? user.isRegistered
+                    ? "Go to Dashboard"
+                    : "Register"
+                  : "Explore Fabrics"
+              }
+              onClick={handleNavigateUser}
+            />
           </div>
 
-          <div className="w-full flex">
+          {/* <div className="w-full flex">
             <div>
               <img className="w-[80px]" src="/assets/Icon.png" alt="" />
 
@@ -29,7 +65,7 @@ export const Hero = () => {
               <h3 className="text-[#38C947] font-bold my-3 text-xl">Global Reach</h3>
               <p className="text-xl text-white"></p>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="md:w-[50%] flex justify-end relative mt-10 md:mt-0">
