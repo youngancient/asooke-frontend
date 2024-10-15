@@ -1,7 +1,7 @@
 // import anakaraImage from "/assets/fabric1.png";
 export const NFTCard = ({ image }: { image: string }) => {
   return (
-    <div className="md:w-[30%] mt-10 md:mt-0 flex justify-end relative">
+    <div className="md:w-[500px] max-w-full mt-10 md:mt-0 ml-4 flex justify-end relative">
       <div className="md:w-[465px] h-[540px] rounded-lg">
         <img
           src={image}
