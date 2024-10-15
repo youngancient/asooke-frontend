@@ -4,14 +4,40 @@ import { Button } from "./Button";
 import { FaShop } from "react-icons/fa6";
 import { RiShoppingBag3Fill } from "react-icons/ri";
 import { FaPaintBrush } from "react-icons/fa";
+import { useRegister } from "../../hooks/specific/useUser";
+import { toast } from "react-toastify";
 type ModalProps = {
   onClose?: () => void;
 };
 export const Modal = ({ onClose }: ModalProps) => {
   const [selected, setSelected] = useState<null | string>(null);
 
+  const {registerUser, isLoading} = useRegister();
+
   const changeSelection = (role: string) => {
     setSelected(role);
+  };
+
+  const [name, setName] = useState("");
+
+  const handleSubmit = () => {
+    if (!name) {
+      toast.error("Display Name cannot be empty");
+      return;
+    }
+    if (!selected) {
+      toast.error("Please select a role");
+      return;
+    }
+    let roleType = 0;
+    if (selected === "buyer") {
+      roleType = 1;
+    } else if (selected === "seller") {
+      roleType = 2;
+    } else if (selected === "designer") {
+      roleType = 3;
+    }
+    registerUser(name, roleType);
   };
 
   return (
@@ -104,17 +130,19 @@ export const Modal = ({ onClose }: ModalProps) => {
           </div>
         )}
 
-        {selected === "buyer" && (
+        {selected && (
           <div className="mt-10">
             <input
               type="text"
               placeholder="Display Name"
+              value={name}
+              onChange={event => setName(event.target.value)}
               className="w-full p-4 rounded-full bg-[#1E1E2D] border-none outline-none text-xl text-[#A1A2AF] my-4"
             />
           </div>
         )}
 
-        {selected === "designer" && (
+        {/* {selected === "designer" && (
           <div className="mt-10">
             <input
               type="number"
@@ -138,9 +166,9 @@ export const Modal = ({ onClose }: ModalProps) => {
               className="w-full p-4 rounded-full bg-[#1E1E2D] border-none outline-none text-xl text-[#A1A2AF] my-4"
             />
           </div>
-        )}
+        )} */}
 
-        {selected === "seller" && (
+        {/* {selected === "seller" && (
           <div className="mt-10">
             <input
               type="number"
@@ -164,13 +192,14 @@ export const Modal = ({ onClose }: ModalProps) => {
               className="w-full p-4 rounded-full bg-[#1E1E2D] border-none outline-none text-xl text-[#A1A2AF] my-4"
             />
           </div>
-        )}
+        )} */}
 
         {selected && (
           <div className="w-full mt-5">
             <Button
               className="w-full rounded-lg bg-[#56BD61] py-5"
-              text="Continue"
+              text={isLoading ? "Registering" : "Register"}
+              onClick={handleSubmit}
             />
           </div>
         )}

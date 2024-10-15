@@ -6,19 +6,16 @@ import { ModalProps } from "../Header";
 
 export const Hero = ({ setOpenModal }: ModalProps) => {
   const { user } = useUser();
-  console.log("user name: ", user?.displayName);
-  console.log("is registered: ", user?.isRegistered);
-  console.log("user role: ", user?.roleType);
-
+console.log(user);
   const handleNavigateUser = () => {
-    if (user) {
-      if (user.isRegistered) {
-        toast.success("Yaay, Let's Go to Dashboard");
-      } else {
-        registerUser();
-      }
-    } else {
+    if (!user) {
       toast.error("Connect Wallet");
+      return;
+    } 
+    if (user.isRegistered) {
+      toast.success("Yaay, Let's Go to Dashboard");
+    } else {
+      registerUser();
     }
   };
 
