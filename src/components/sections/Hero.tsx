@@ -3,17 +3,27 @@ import { useUser } from "../../hooks/specific/useUser";
 import { Button } from "../ui/Button";
 import anakaraImage from "/assets/fabric1.png";
 import { ModalProps } from "../Header";
+import { useNavigate } from "react-router-dom";
 
 export const Hero = ({ setOpenModal }: ModalProps) => {
   const { user } = useUser();
-console.log(user);
+// console.log(user);
+const navigate = useNavigate();
+
   const handleNavigateUser = () => {
     if (!user) {
       toast.error("Connect Wallet");
       return;
     } 
     if (user.isRegistered) {
-      toast.success("Yaay, Let's Go to Dashboard");
+      toast.success("Welcome back to AsoEbi");
+      if(user.roleType == 3){ // buyer
+        navigate("/dashboard");
+      } else if(user.roleType == 2){ //designer
+        navigate("/designers");
+      }else if(user.roleType == 1){  //seller
+        navigate("/sellers");
+      }
     } else {
       registerUser();
     }

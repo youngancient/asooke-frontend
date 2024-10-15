@@ -19,9 +19,9 @@ const AppRoutes = () => {
         <Route path="/blogs" element={<Blog />} />
         <Route path="/videos" element={<Video />} />
         <Route path="/articles" element={<Article />} />
-        <Route path="*" element={"Not Found"} />
         <Route path="/sellers" element={<Sellers />} />
         <Route path="/designers" element={<Designers />} />
+        <Route path="*" element={"Not Found"} />
       </Routes>
     </Router>
   );

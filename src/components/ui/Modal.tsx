@@ -30,11 +30,11 @@ export const Modal = ({ onClose }: ModalProps) => {
       return;
     }
     let roleType = 0;
-    if (selected === "buyer") {
+    if (selected === "seller") {
       roleType = 1;
-    } else if (selected === "seller") {
-      roleType = 2;
     } else if (selected === "designer") {
+      roleType = 2;
+    } else if (selected === "buyer") {
       roleType = 3;
     }
     registerUser(name, roleType);
