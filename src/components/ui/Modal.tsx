@@ -104,6 +104,16 @@ export const Modal = ({ onClose }: ModalProps) => {
           </div>
         )}
 
+        {selected === "buyer" && (
+          <div className="mt-10">
+            <input
+              type="text"
+              placeholder="Display Name"
+              className="w-full p-4 rounded-full bg-[#1E1E2D] border-none outline-none text-xl text-[#A1A2AF] my-4"
+            />
+          </div>
+        )}
+
         {selected === "designer" && (
           <div className="mt-10">
             <input
