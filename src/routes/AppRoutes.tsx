@@ -1,10 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LandingPage from "../pages/LandingPage";
 import Dashboard from "../pages/dashboard/Dashboard";
-import Content from "../pages/Content";
-import Blog from "../pages/blogs";
-import Video from "../pages/videos";
-import Article from "../pages/articles";
+import Sellers from "../pages/dashboard/sellers/Sellers";
+import Designers from "../pages/dashboard/designers/Designers";
+
 
 const AppRoutes = () => {
   return (
@@ -17,6 +16,8 @@ const AppRoutes = () => {
         <Route path="/videos" element={<Video />} />
         <Route path="/articles" element={<Article />} />
         <Route path="*" element={"Not Found"} />
+        <Route path="/sellers" element={<Sellers />} />
+        <Route path="/designers" element={<Designers />} />
       </Routes>
     </Router>
   );
