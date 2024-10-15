@@ -2,23 +2,26 @@ import { useAppKit, useAppKitAccount } from "@reown/appkit/react";
 import { Button } from "./ui/Button";
 import { formatAddress } from "../utils/helper";
 import { useEffect } from "react";
-type ModalProps = {
+import { useUser } from "../hooks/specific/useUser";
+import { toast } from "react-toastify";
+
+export type ModalProps = {
   setOpenModal: () => void;
   openModal?: Boolean;
 };
 
-const Header = ({ setOpenModal }: ModalProps) => {
+const Header = () => {
   const { open } = useAppKit();
   const { address, isConnected } = useAppKitAccount();
 
   const handleButtonClick = () => {
     open();
-    // setOpenModal();
   };
+  const { user } = useUser();
 
   useEffect(() => {
-    if (isConnected) {
-      setOpenModal();
+    if (isConnected && !user?.isRegistered) {
+      toast.error("You are not registered");
     }
   }, [isConnected]);
 
