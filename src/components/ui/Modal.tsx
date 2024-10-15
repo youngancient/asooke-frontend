@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { Button } from "./Button";
+import { FaShop } from "react-icons/fa6";
+import { RiShoppingBag3Fill } from "react-icons/ri";
+import { FaPaintBrush } from "react-icons/fa";
 type ModalProps = {
   onClose?: () => void;
 };
@@ -50,44 +53,64 @@ export const Modal = ({ onClose }: ModalProps) => {
         {/* modal body */}
 
         {!selected && (
-          <div className="w-full mt-10">
+          <div className="w-full mt-20 flex items-center justify-between">
             <div
               onClick={() => changeSelection("buyer")}
-              className="w-full flex items-center cursor-pointer"
+              className="w-[150px] p-4 border rounded-lg flex items-center justify-center flex-col cursor-pointer"
             >
               <div>
-                <img className="w-[50px]" src="/assets/avatar.png" alt="" />
+                <span>
+                  <RiShoppingBag3Fill size={40} color="white" />
+                </span>
+                {/* <img className="w-[50px]" src="/assets/avatar.png" alt="" /> */}
               </div>
 
-              <div className="ml-5">
-                <h3 className="text-2xl font-bold text-white">Buyer</h3>
+              <div className="mt-5">
+                <h3 className="text-2xl  text-white">Buyer</h3>
               </div>
             </div>
+
             <div
               onClick={() => changeSelection("seller")}
-              className="w-full flex items-center mt-4 cursor-pointer"
+              className=" w-[150px] p-4 border rounded-lg flex items-center justify-center flex-col cursor-pointer"
             >
               <div>
-                <img className="w-[50px]" src="/assets/avatar.png" alt="" />
+                <span>
+                  <FaShop size={40} color="white" />
+                </span>
+                {/* <img className="w-[50px]" src="/assets/avatar.png" alt="" /> */}
               </div>
 
-              <div className="ml-5">
-                <h3 className="text-2xl font-bold text-white">Seller</h3>
+              <div className="mt-5">
+                <h3 className="text-2xl  text-white">Seller</h3>
               </div>
             </div>
 
             <div
               onClick={() => changeSelection("designer")}
-              className="w-full flex items-center mt-4 cursor-pointer"
+              className="w-[150px] p-4 border rounded-lg flex items-center justify-center flex-col cursor-pointer"
             >
               <div>
-                <img className="w-[50px]" src="/assets/avatar.png" alt="" />
+                <span>
+                  <FaPaintBrush size={40} color="white" />
+                </span>
+                {/* <img className="w-[50px]" src="/assets/avatar.png" alt="" /> */}
               </div>
 
-              <div className="ml-5">
-                <h3 className="text-2xl font-bold text-white">Designer</h3>
+              <div className="mt-5">
+                <h3 className="text-2xl  text-white">Designer</h3>
               </div>
             </div>
+          </div>
+        )}
+
+        {selected === "buyer" && (
+          <div className="mt-10">
+            <input
+              type="text"
+              placeholder="Display Name"
+              className="w-full p-4 rounded-full bg-[#1E1E2D] border-none outline-none text-xl text-[#A1A2AF] my-4"
+            />
           </div>
         )}
 
