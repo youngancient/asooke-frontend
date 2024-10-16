@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 export type ModalProps = {
   setOpenModal: () => void;
-  openModal?: Boolean;
+  openModal?: boolean;
 };
 
 const Header = () => {
@@ -17,13 +17,15 @@ const Header = () => {
   const handleButtonClick = () => {
     open();
   };
-  const { user } = useUser();
+  const { user, isLoading } = useUser();
 
   useEffect(() => {
-    if (isConnected && !user?.isRegistered) {
-      toast.error("You are not registered");
+    if (isConnected && user && !isLoading) {
+      if (!user.isRegistered) {
+        toast.error("You are not registered");
+      }
     }
-  }, [isConnected]);
+  }, [isConnected, user, isLoading]);
 
   return (
     <header className="w-full p-4 bg-[#1B201C] flex items-center justify-between py-">
