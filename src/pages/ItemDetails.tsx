@@ -1,22 +1,26 @@
-import { Link } from "react-router-dom";
-import Banner from "../components/ui/Banner";
-import { NFTCard } from "../components/ui/NFTCard";
 import SearchBtn from "../components/ui/Search";
 import ThemeToggle from "../components/ui/ThemeToggle";
 import Sidebar from "../components/ui/Sidebar";
-import { FaShoppingCart } from "react-icons/fa";
-import { FaClipboardList } from "react-icons/fa6";
-import Stat from "../components/ui/Stats";
 import { useAppKitAccount } from "@reown/appkit/react";
 import { formatAddress } from "../utils/helper";
 import { useAppKit } from "@reown/appkit/react";
+import { useState } from "react";
 
 function ItemDetails() {
   const { address } = useAppKitAccount();
   const { open } = useAppKit();
+  const [quantity, setQuantity] = useState(1);
 
   const handleAccount = () => {
     open({ view: "Account" });
+  };
+
+  const handleChangeQuantity = (action: string) => {
+    if (action === "decrease" && quantity > 1) {
+      setQuantity((prevQuantity) => prevQuantity - 1);
+    } else {
+      setQuantity((prevQuantity) => prevQuantity + 1);
+    }
   };
 
   // if (!isConnected) {
@@ -49,8 +53,8 @@ function ItemDetails() {
 
         <div className="mx-4 md:mx-12 flex flex-col md:flex-row gap-4 mt-2 md:mt-6"></div>
 
-        <div className="md:mx-8 mt-8 flex">
-          <div>
+        <div className="w-full px-10 flex">
+          <div className="w-[30%]">
             <img
               className="w-[400px] rounded-xl"
               src="/assets/image 4.png"
@@ -100,10 +104,29 @@ function ItemDetails() {
             </svg>
             <p className="mt-5 text-3xl font-medium text-white">$260 $300</p>
             <p className="text-2xl text-white mt-10">
-              This graphic t-shirt which is perfect for any occasion. Crafted <br />
+              This graphic t-shirt which is perfect for any occasion. Crafted{" "}
+              <br />
               from a soft and breathable fabric, it offers superior comfort and
               style.
             </p>
+
+            <div className="text-3xl bg-white rounded-xl font-bold p-5 flex items-center w-[300px] justify-between mt-5">
+              <button onClick={() => handleChangeQuantity("decrease")}>
+                -
+              </button>
+              <span>{quantity}</span>
+              <button onClick={() => handleChangeQuantity("increase")}>
+                +
+              </button>
+            </div>
+
+            <p className="text-xl text-white mt-10">
+              Note: The fabrics come in 1 yard each so order as much quantity
+            </p>
+
+            <button className="w-[380px] p-4 bg-[#535E54] text-white max-w-[95%] mt-5 rounded-xl">
+              Place Order
+            </button>
           </div>
         </div>
       </div>
