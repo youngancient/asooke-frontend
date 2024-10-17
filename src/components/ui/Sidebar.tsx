@@ -4,7 +4,15 @@ import { FaTachometerAlt, FaBox, FaRegClock } from "react-icons/fa";
 const Sidebar = () => {
   return (
     <div className="bg-[#2D2D3E] md:min-w-[250px] min-h-screen flex flex-col py-4 md:py-8">
-      <div className="text-white mb-6 font-bold text-2xl md:mx-6">ASO-EBI</div>
+      <div className="text-white mb-6 font-bold text-2xl md:mx-6">
+        <Link to="/">
+          <img
+            src="/assets/aso-ebi-green.png"
+            alt="AsoEbi"
+            className="w-56 h-10"
+          />
+        </Link>
+      </div>
       <ul className="text-gray-400 flex flex-col w-full items-start md:mx-6">
         <li className="mb-4 cursor-pointer hover:text-white transition flex items-center">
           <FaTachometerAlt className="mr-2" />

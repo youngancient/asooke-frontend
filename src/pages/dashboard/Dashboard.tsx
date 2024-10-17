@@ -1,4 +1,4 @@
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Banner from "../../components/ui/Banner";
 import { NFTCard } from "../../components/ui/NFTCard";
 import SearchBtn from "../../components/ui/Search";
@@ -15,16 +15,9 @@ function Dashboard() {
   const { address } = useAppKitAccount();
   const { open } = useAppKit();
 
-
   const handleAccount = () => {
     open({ view: "Account" });
   };
-
-  // if (!isConnected) {
-  //   return (
-      
-  //   );
-  // }
 
   return (
     <div className="flex w-full min-h-screen bg-[#1E1E2D]">
@@ -32,7 +25,7 @@ function Dashboard() {
         <Sidebar />
       </div>
       <div className="flex-1 overflow-auto h-screen">
-        <div className="flex justify-between items-center mx-4 md:mx-12 py-2 md:py-4">
+      <div className="flex justify-between items-center mx-4 md:mx-12 py-2 md:py-4">
           <div className="flex items-center">
             <SearchBtn />
           </div>
@@ -45,7 +38,7 @@ function Dashboard() {
               {formatAddress(address ?? "")}
             </button>
             <ThemeToggle />
-          </div>
+	    </div>
         </div>
 
         <div className="mx-4 md:mx-12 flex flex-col md:flex-row gap-4 mt-2 md:mt-6">
@@ -61,6 +54,7 @@ function Dashboard() {
             </div>
           </div>
         </div>
+	i ;lakfdnlsakfn 
 
         <div className="md:mx-8 mt-8">
           <div className="flex justify-between items-center mx-4 md:mx-12 my-6">
