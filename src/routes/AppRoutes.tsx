@@ -7,14 +7,13 @@ import ContentsPage from "../pages/Content";
 import Blog from "../pages/blogs";
 import Video from "../pages/videos";
 import Article from "../pages/articles";
-// import { useAppKitAccount } from "@reown/appkit/react";
+import { useAppKitAccount } from "@reown/appkit/react";
 import { NotConnected } from "../components/ui/NotConnected";
 import ItemDetails from "../pages/ItemDetails";
 
 const AppRoutes = () => {
-  // const { isConnected } = useAppKitAccount();
+  const { isConnected } = useAppKitAccount();
 
-  const isConnected: boolean = true;
   return (
     <Router>
       <Routes>
