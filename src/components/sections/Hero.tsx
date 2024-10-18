@@ -145,13 +145,13 @@ const navigate = useNavigate();
         </div>
       </div>
 
-      <div className="w-full items-center justify-center mt-20">
+      {/* <div className="w-full items-center justify-center mt-20">
         <div className="w-[95%] relative bg-[#1B201C] h-[230px] rounded-2xl">
           <div className="absolute top-[-60px] right-[-40px]">
             <img className="w-[150px]" src="/assets/star.png" alt="Star" />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
