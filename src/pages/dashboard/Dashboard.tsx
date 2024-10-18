@@ -25,7 +25,7 @@ function Dashboard() {
         <Sidebar />
       </div>
       <div className="flex-1 overflow-auto h-screen">
-      <div className="flex justify-between items-center mx-4 md:mx-12 py-2 md:py-4">
+        <div className="flex justify-between items-center mx-4 md:mx-12 py-2 md:py-4">
           <div className="flex items-center">
             <SearchBtn />
           </div>
@@ -38,9 +38,8 @@ function Dashboard() {
               {formatAddress(address ?? "")}
             </button>
             <ThemeToggle />
-	    </div>
+          </div>
         </div>
-
         <div className="mx-4 md:mx-12 flex flex-col md:flex-row gap-4 mt-2 md:mt-6">
           <div className="flex-1">
             <Banner />
@@ -54,9 +53,8 @@ function Dashboard() {
             </div>
           </div>
         </div>
-	i ;lakfdnlsakfn 
-
-        <div className="md:mx-8 mt-8">
+        
+        <div className="md:mx-8 mt-8 pb-6">
           <div className="flex justify-between items-center mx-4 md:mx-12 my-6">
             <h2 className="text-2xl font-bold text-white">
               Trending Materials
@@ -66,9 +64,12 @@ function Dashboard() {
             </Link>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-8">
+          <div className="trending-list">
             <NFTCard image="/assets/image 4.png" />
             <NFTCard image="/assets/image 10.png" />
+            <NFTCard image="/assets/image 9.png" />
+            <NFTCard image="/assets/image 7.png" />
+            <NFTCard image="/assets/image 8.png" />
             <NFTCard image="/assets/image 9.png" />
           </div>
         </div>

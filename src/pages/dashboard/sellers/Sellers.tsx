@@ -5,11 +5,13 @@ import { FaShoppingCart, FaThumbsUp } from "react-icons/fa";
 import { formatAddress } from "../../../utils/helper";
 import { useAppKit, useAppKitAccount } from "@reown/appkit/react";
 import FabricForm from "../../../components/ui/SellersMintForm";
+import { useUser } from "../../../hooks/specific/useUser";
 
-const Sellers = () => {
+const Stores = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { address } = useAppKitAccount();
   const { open } = useAppKit();
+  const { user } = useUser();
 
   const handleModalToggle = () => {
     setIsModalOpen(!isModalOpen);
@@ -27,6 +29,10 @@ const Sellers = () => {
 
       <div className="flex-1 p-6 overflow-y-auto bg-[#151716]">
         <div className="flex justify-between items-center mb-6">
+        <h1 className="text-2xl font-bold text-white">
+            Welcome, {user && user.displayName}!
+          </h1>
+          
           <input
             type="text"
             placeholder="Search any collection"
@@ -102,4 +108,4 @@ const Sellers = () => {
   );
 };
 
-export default Sellers;
+export default Stores;
