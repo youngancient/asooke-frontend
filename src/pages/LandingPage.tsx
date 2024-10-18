@@ -5,6 +5,7 @@ import { BeforeFooter } from "../components/sections/BeforeFooter";
 import { Hero } from "../components/sections/Hero";
 import { TopSellers } from "../components/sections/TopSellers";
 import { Modal } from "../components/ui/Modal";
+import { Footer } from "../components/Footer";
 
 const LandingPage = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -21,7 +22,7 @@ const LandingPage = () => {
       <AfterHero />
       <TopSellers />
       <BeforeFooter />
-      {/* <Header setOpenModal={() => setOpenModal(true)} openModal={openModal} /> */}
+      <Footer />
     </div>
   );
 };

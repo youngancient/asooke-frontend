@@ -18,7 +18,7 @@ export const TopSellers = () => {
           </p>
         </div>
 
-        <div className="w-full flex items-center justify-center flex-col">
+        {/* <div className="w-full flex items-center justify-center flex-col">
           <div className="mt-20 w-full lg:w-[95%] flex items-center  md:flex-row flex-col flex-wrap">
             <NFTCard image="/assets/image 4.png" />
             <NFTCard image="/assets/image 5.png" />
@@ -36,6 +36,14 @@ export const TopSellers = () => {
             <NFTCard image="/assets/image 11.png" />
             <NFTCard image="/assets/image 12.png" />
           </div>
+        </div> */}
+        <div className="house-list-comp w-full p-4 ">
+          <NFTCard image="/assets/image 4.png" />
+          <NFTCard image="/assets/image 5.png" />
+          <NFTCard image="/assets/fabric1.png" />
+          <NFTCard image="/assets/image 7.png" />
+          <NFTCard image="/assets/image 8.png" />
+          <NFTCard image="/assets/image 9.png" />
         </div>
       </div>
     </section>
