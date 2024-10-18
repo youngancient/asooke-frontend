@@ -10,7 +10,7 @@ export const NFTCard = ({ image }: { image: string }) => {
         />
       </div>
 
-      <div className="absolute md:w-[465px] h-[540px] flex items-end justify-end p-4">
+      <div className="absolute md:w-full h-[540px] flex items-end justify-end p-0">
         <div className="backdrop-blur-lg bg-black/30 border border-white/30 rounded-lg shadow-lg p-4 w-full flex items-center justify-between">
           <div className="flex items-center">
             <div>
@@ -23,7 +23,7 @@ export const NFTCard = ({ image }: { image: string }) => {
             </div>
           </div>
 
-          <div className="flex ml-5 items-center bg-white text-[#38C947] text-xl p-2 rounded-xl">
+          <div className="flex ml-5 items-center bg-white text-[#38C947] text-xl p-2 rounded-xl md:text-lg md:p-1 sm:text-base sm:p-0.5">
             <svg
               width="30"
               height="30"

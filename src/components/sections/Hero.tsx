@@ -4,15 +4,18 @@ import { Button } from "../ui/Button";
 import anakaraImage from "/assets/fabric1.png";
 import { ModalProps } from "../Header";
 import { useNavigate } from "react-router-dom";
+import { useAppKit } from "@reown/appkit/react";
 
 export const Hero = ({ setOpenModal }: ModalProps) => {
   const { user } = useUser();
+  const { open } = useAppKit();
 // console.log(user);
 const navigate = useNavigate();
 
   const handleNavigateUser = () => {
     if (!user) {
-      toast.error("Connect Wallet");
+      toast.error("Connect Wallet First!");
+      open();
       return;
     } 
     if (user.isRegistered) {
@@ -20,9 +23,9 @@ const navigate = useNavigate();
       if(user.roleType == 3){ // buyer
         navigate("/dashboard");
       } else if(user.roleType == 2){ //designer
-        navigate("/designers");
+        navigate("/portfolio");
       }else if(user.roleType == 1){  //seller
-        navigate("/sellers");
+        navigate("/store");
       }
     } else {
       registerUser();
@@ -84,7 +87,7 @@ const navigate = useNavigate();
             />
           </div>
 
-          <div className="absolute md:w-[465px] h-[540px] flex items-end justify-end p-4">
+          <div className="absolute md:w-[465px] h-[540px] flex items-end justify-end p-1">
             <div className="backdrop-blur-lg bg-black/30 border border-white/30 rounded-lg shadow-lg p-4 w-full flex items-center justify-between">
               <div className="flex items-center">
                 <div>

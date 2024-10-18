@@ -8,11 +8,13 @@ import { useAppKit, useAppKitAccount } from "@reown/appkit/react";
 import MinItemForm from "../../../components/ui/MintForm";
 import MintedProduct from "../../../components/ui/MintedItems";
 import { FaClipboardList } from "react-icons/fa6";
+import { useUser } from "../../../hooks/specific/useUser";
 
 const Designers = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { address } = useAppKitAccount();
   const { open } = useAppKit();
+  const { user } = useUser();
 
   const handleAccount = () => {
     open({ view: "Account" });
@@ -31,7 +33,7 @@ const Designers = () => {
       <div className="flex-1 p-6 overflow-y-auto bg-[#151716]">
         <div className="flex gap-2 items-center justify-between mb-6">
           <h1 className="text-2xl font-bold text-white">
-            Welcome back, {formatAddress(address ?? "")}!
+            Welcome, {user && user.displayName}!
           </h1>
 
           <div className="flex gap-3">
